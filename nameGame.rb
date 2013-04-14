@@ -1,3 +1,4 @@
+#!/bin/env ruby
 #First things first, most of the comments are to myself as I am pondering the functionality, as I progress I'll remove them or refine them to be more consise, until then they might seem ramblish.
 
 #Also of note, this is definitely going to need a good reworking of variable names as I've just started shoving certain things here and there as I try and get this to do what I want
