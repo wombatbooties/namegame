@@ -3,6 +3,9 @@ namegame
 
 Cheesy little game where defeating an opponent rewards an additional name
 
+To run it:
+  ruby nameGame.rb
+
 Command list(to date: 4-14-13)
 
 help - lists available commands

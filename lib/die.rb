@@ -5,9 +5,67 @@
 
 require 'yaml'
 
-require './lib/die.rb'
-require './lib/hero.rb'
-require './lib/weapon.rb'
+class Die
+
+  def initialize
+    roll
+  end
+
+  def roll
+    @num_rolled = rand(100)
+  end
+
+  def result
+    @num_rolled
+  end
+
+end
+
+
+class Hero
+#level needs to be removed and adjusted for in the attacking etc. just need to use x.length
+
+  def initialize( aName )
+    @name = []
+    @name.push( aName )
+    @level = @name.length
+  end
+
+  def add_name
+    puts 'Give ' +  + 'an additional name.'
+    input = gets.chomp +
+    @name.push( input )
+    @level = @name.length
+  end
+
+  def add_name( aName )
+    @name.push( aName )
+    @level = @name.length
+  end
+
+  def show_name
+    @name.join(" ")
+  end
+
+  def first_name
+    @name.first
+  end
+
+  def get_level
+    return @level
+  end
+
+end
+
+
+class Weapon < Hero
+
+  def initialize (aType)
+    super @name
+    @type = aType
+  end
+
+end
 
 def lineup( anArray )
   @count = 1
