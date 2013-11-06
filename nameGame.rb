@@ -47,7 +47,9 @@ def yaml_load filename
   YAML::load yaml_string
 end
 
+puts 'Holy Broken Program Batman!'
 
+@quitBool = false
 input = ''
 heroes = []
 fallen = []
