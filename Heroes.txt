@@ -1,1 +1,9 @@
---- []
+---
+- !ruby/object:Hero
+  name:
+  - eddy
+  level: 1
+- !ruby/object:Hero
+  name:
+  - tom
+  level: 1

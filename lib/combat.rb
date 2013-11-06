@@ -7,6 +7,16 @@ class Combat
      combat( anArray, fallen, boolSpar )
   end
 
+#  def lineup( anArray )
+#    @count = 1
+#    anArray.each do |x|
+#      puts @count.to_s + ')' + x.show_name
+#      @count += 1
+#    end
+#    puts ''
+#  end
+
+
   def combat( anArray, fallen, boolSpar )
     @spar = boolSpar
     @range = anArray.length

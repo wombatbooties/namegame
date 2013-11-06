@@ -1,7 +1,5 @@
 #!/bin/env ruby
 
-class NameGame
-
 #First things first, most of the comments are to myself as I am pondering the functionality, as I progress I'll remove them or refine them to be more consise, until then they might seem ramblish.
 
 #Also of note, this is definitely going to need a good reworking of variable names as I've just started shoving certain things here and there as I try and get this to do what I want
@@ -12,6 +10,7 @@ require './lib/die.rb'
 require './lib/hero.rb'
 require './lib/weapon.rb'
 require './lib/combat.rb'
+
 
 def lineup( anArray )
   @count = 1
@@ -61,7 +60,7 @@ while @quitBool == false
   if input == 'help'
     puts 'exit, list, new, fallen, load, save, revive'
   elsif input == 'exit'
-    quitBool = true
+    @quitBool = true
   elsif input == 'list'
     puts ''
     puts '<<The Heroes>>'
@@ -92,6 +91,4 @@ while @quitBool == false
     filename = 'Fallen.txt'
     fallen = yaml_load filename
   end
-end
-
 end
