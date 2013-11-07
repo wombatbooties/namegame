@@ -7,16 +7,6 @@ class Combat
      combat( anArray, fallen, boolSpar )
   end
 
-#  def lineup( anArray )
-#    @count = 1
-#    anArray.each do |x|
-#      puts @count.to_s + ')' + x.show_name
-#      @count += 1
-#    end
-#    puts ''
-#  end
-
-
   def combat( anArray, fallen, boolSpar )
     @spar = boolSpar
     @range = anArray.length
@@ -27,12 +17,15 @@ class Combat
       lineup(anArray)
       puts ''
       valid_choice = false
-#need a catch in here for outside index numbers...
+#---attempt to parse an input and use it as the choice
       while (not valid_choice)
-        puts 'First combatant\'s number? #NEEDS A CATCH FOR NON INTEGERS HERE'
+        puts 'First combatant'
         c1 = gets.chomp.to_i - 1
-        puts 'Second combatant\'s number?'
+#---	@good = false
+#---	anArray.each.first.any? { |w| c1 =~ /#{w}/  }
+        puts 'Second combatant'
         c2 = gets.chomp.to_i - 1
+	c2 = gets.chomp
         if c2 == c1
     puts anArray[c1].show_name + ' cannot fight themselves! Choose again.'
 	else
