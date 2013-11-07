@@ -1,6 +1,8 @@
 class Hero
 #level needs to be removed and adjusted for in the attacking etc. just need to use x.length
 
+#Structure of Hero should change, I think the nested arrays are causing a lot of my headaches. I think I should just break the name down into a string and figure out how to deliminate via spaces and whatnot.
+
   def initialize( aName )
     @name = []
     @name.push( aName )
