@@ -31,3 +31,27 @@ load - loads heroes and fallen *will overwrite current games creations*
 
 enjoy
 
+functionality goals
+-------------------
+
+improved saving and loading - currently overwrites existing files
+
+* check start of program for options to load or just do it automatically
+
+* throw a catch in for saving over existing info (this will be less important if prtevious option is done)
+
+combatant selection is based of an integer choice pointing at the list, I'd like to have it so it parses input and compares it against available heroes.
+
+* this may involve a revamp of the Hero class to make it viable.
+
+weapons would be amusing, and there is already a start.
+
+combat could use a bit more depth.
+
+* revamp how it deals with close calls and potentially make them blocks or parries?
+
+* expand health?
+
+* this could be going to far for such a silly program...
+
+Future translation into something that could be run on a website would be awesome.
