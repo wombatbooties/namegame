@@ -11,7 +11,7 @@ class Hero
 
   def add_name
     puts 'Give ' +  + 'an additional name.'
-    input = gets.chomp +
+    input = gets.chomp
     @name.push( input )
     @level = @name.length
   end
