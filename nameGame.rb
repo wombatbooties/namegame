@@ -81,14 +81,14 @@ while @quitBool == false
     Combat.new(heroes, fallen, true)
   elsif input == 'save'
 #need to put a catch in save, easy to save over the files at the moment
-    filename = 'Heroes.txt'
+    filename = 'share/heroes.yml'
     yaml_save heroes, filename
-    filename = 'Fallen.txt'
+    filename = 'share/fallen.yml'
     yaml_save fallen, filename
   elsif input == 'load'
-    filename = 'Heroes.txt'
+    filename = 'share/heroes.yml'
     heroes = yaml_load filename
-    filename = 'Fallen.txt'
+    filename = 'share/fallen.yml'
     fallen = yaml_load filename
   end
 end
