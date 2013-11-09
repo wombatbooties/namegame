@@ -25,7 +25,6 @@ class Combat
 #---	anArray.each.first.any? { |w| c1 =~ /#{w}/  }
         puts 'Second combatant'
         c2 = gets.chomp.to_i - 1
-	c2 = gets.chomp
         if c2 == c1
     puts anArray[c1].show_name + ' cannot fight themselves! Choose again.'
 	else
