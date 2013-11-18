@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'thread'
+threads = []
+names = %w{ list dayne josh julie will alex erica list walker emily dustin steadman list }
+
+
+names.each do |n| 
+  threads << Thread.new do
+    system("./arena_client.rb #{n}")
+  end
+  sleep 1
+end
+
+threads.each(&:join)
