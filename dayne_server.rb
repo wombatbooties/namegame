@@ -27,13 +27,13 @@ class ArenaServer
     if @pen.size <= 1
       puts 'waiting for another fighter.'
     else
-      first = @pen.pop
-      second = @pen.pop
+      first = @pen.delete_at(rand(@pen.size))
+      second = @pen.delete_at(rand(@pen.size))
       puts first + ' fights ' + second
       winner = (rand(10)>5)?(first):(second)
       puts "the winner is #{winner}"
       @count += 1
-      @pen.push winner
+      @pen.push(winner)
     end
     puts "current @pen: #{@pen.inspect}"
   end
@@ -43,7 +43,6 @@ class ArenaServer
       fight if @pen.size > 1
       sleep 2  
       puts @pen.inspect if rand(10) == 1
-
     end
   end
 end
