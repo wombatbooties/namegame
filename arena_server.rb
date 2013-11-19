@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'drb'
 
 class ArenaServer
@@ -19,6 +20,16 @@ class ArenaServer
     @id += 1
   end
 
+  def combat(white, black)
+    wscore = white[:kills].size() + rand(5)
+    bscore = black[:kills].size() + rand(5)
+    if wscore >= bscore
+      return white, black
+    else
+      return black, white
+    end
+  end
+
   def cage(name)
     @pen.push({:id => get_id(),
                :name => name,
@@ -33,13 +44,7 @@ class ArenaServer
       @count += 1
       heroA = @pen.delete_at(rand(@pen.size))
       heroB = @pen.delete_at(rand(@pen.size))
-      if rand(10) > 5
-        winner = heroA
-        loser = heroB
-      else
-        winner = heroB
-        loser = heroA
-      end
+      winner, loser = combat(heroA, heroB)
       winner[:kills].push(loser)
       @pen.push(winner)
       puts winner[:name] + " was victorious over " + loser[:name] + "!"
