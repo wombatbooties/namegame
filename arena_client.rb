@@ -21,7 +21,7 @@ begin
   heroes = arena.heroes
   puts "Connected to areana"
   if heroes.size > 0
-    puts heroes.inspect
+    puts heroes.collect { |h| h[:name] }.inspect
   else
     puts "arena is currently empty".yellow
   end
@@ -34,7 +34,7 @@ hero = ARGV.shift || get_name()
 case hero
 when 'list'
   heroes = arena.heroes
-  puts heroes.inspect
+  puts heroes.collect { |h| h[:name] }.inspect
   exit 
 else 
   puts "submitting #{hero}"
@@ -47,8 +47,10 @@ while(not_done)
   next if count == arena.count 
   count = arena.count
   heroes = arena.heroes
-  if heroes.include?(hero)
-    puts "you are still alive! #{hero}".green
+  me = false
+  heroes.each { |h| me = h if h[:name] == hero }
+  if me
+    puts "#{hero} is still alive! Kills: #{me[:kills].collect{ |k| k[:name]}.join(", ")}".green
   else
     puts "#{hero} died..".red
     exit 
