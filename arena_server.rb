@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'drb'
+require 'colored'
 
 class ArenaServer
   def initialize
@@ -24,8 +25,10 @@ class ArenaServer
     wscore = white[:kills].size() + rand(5)
     bscore = black[:kills].size() + rand(5)
     if wscore >= bscore
+      puts white[:name].green + " scores: " + wscore.to_s.yellow + " over " + black[:name].red + "'s: " + bscore.to_s.yellow
       return white, black
     else
+      puts black[:name].green + " scores: " + bscore.to_s.yellow + " over " + white[:name].red + "'s " + wscore.to_s.yellow
       return black, white
     end
   end
