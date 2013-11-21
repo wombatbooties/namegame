@@ -19,7 +19,7 @@ end
 arena = DRbObject.new(nil, 'druby://localhost:9000')
 begin
   heroes = arena.heroes
-  puts "Connected to areana"
+  puts "Connected to arena"
   if heroes.size > 0
     puts heroes.collect { |h| h[:name] }.inspect
   else
